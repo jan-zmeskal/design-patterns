@@ -75,16 +75,13 @@ class GameCharacter:
 
         return power
 
-    def set_attack_strategy(self, attack_strategy: AttackStrategy) -> None:
-        self.attack_strategy = attack_strategy
-
 
 def main():
     arthas = GameCharacter(name="Arthas")
     assert arthas.attack() == 5
-    arthas.set_attack_strategy(BowAttackStrategy())
+    arthas.attack_strategy = BowAttackStrategy()
     assert arthas.attack() == 15
-    arthas.set_attack_strategy(FireballAttackStrategy())
+    arthas.attack_strategy = FireballAttackStrategy()
     assert arthas.attack() == 11
 
 
